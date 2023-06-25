@@ -1,8 +1,9 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
+import { AxiosResponse, FixtureByIdResponse } from '../utils/types';
 
 export default async function fixtureByIdHandler(
   id: string
-): Promise<AxiosResponse<any, any> | unknown> {
+): Promise<FixtureByIdResponse> {
   const options = {
     method: 'GET',
     url: `https://api-football-v1.p.rapidapi.com/v3/fixtures`,
@@ -14,10 +15,12 @@ export default async function fixtureByIdHandler(
   };
 
   try {
-    const response = await axios.request(options);
+    const response: AxiosResponse = await axios.request(options);
     return response.data;
   } catch (error) {
-    console.error(error);
-    return error;
+    // link in with logger e.g. kibana
+    console.log(error);
+    console.log('handlererr');
+    throw new Error(error.toString());
   }
 }

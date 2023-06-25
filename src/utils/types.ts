@@ -23,3 +23,16 @@ interface Appmetadata {
   provider: string;
   providers: string[];
 }
+
+export interface AxiosResponse {
+  data: FixtureByIdResponse;
+  status: number;
+}
+
+export interface FixtureByIdResponse {
+  get: string;
+  parameters: Record<string, unknown>;
+  results: number;
+  paging: Record<string, unknown>;
+  response: Array<unknown>;
+}
