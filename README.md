@@ -1,26 +1,10 @@
-# ExpressJS API Example
+# ExpressJS API
 
-This example starts an [ExpressJS](https://expressjs.com/) server written in [TypeScript](https://www.typescriptlang.org/).
+Valid routes are cached
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/n_2mnn?referralCode=matt)
+There is a route to clear the cache with no JWT validation for ease of use
 
-## ✨ Features
-
-- Express
-- TypeScript
-
-## 💁‍♀️ How to use
-
-- Install dependencies `yarn`
-- Connect to your Railway project `railway link`
-- Start the development server `railway run yarn dev`
-
-## 📝 Notes
-
-The server started simply returns a healthcheck `status: "ok"` payload in JSON. The server code is located in `src/index.ts`.
-
-A versioned API route is available in `src/api.ts` and example function `hello` at `/api/v1/hello`.
-
-## 👏 Thanks
-
-- [Faraz Patankar](https://github.com/FarazPatankar) / Railway team for the [original template](https://github.com/railwayapp-templates/expressjs)
+- Fetch data from: https://rapidapi.com/api-sports/api/api-football/pricing.
+- One endpoint for all fixtures, one for a specific fixture and all odds relating
+- JWT auth validation
+- Cache when a response is given so that invalid requests aren't cached, data not available yet wont be cached.
